@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130115170017) do
     t.integer  "reader_id"
     t.integer  "subject_id"
     t.integer  "minutes"
+    t.integer  "priority"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

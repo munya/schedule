@@ -4,7 +4,7 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)            
+#   Mayor.create(name: 'Emanuel', city: cities.first)         
 
 (1..10).each do |i|
   Reader.create(name: Faker::Name.name, ravity: rand(10))           
@@ -22,12 +22,12 @@ end
                  {week_num: week_num, start_time: "16:00", end_time: "17:20"}])           
 end
              
-minutes = (1..24).map{|i| i*80*(rand(3)+1)}
+minutes = (1..24).map{|i| i*80*(rand(3)+1)} #max 3 times per week durring 24 weeks
 
 (1..10).each do |i|
   reader = Reader.find(i)
   subject = Subject.find(i)
   group = Group.find(i)        
-  GroupReaderSubject.create(reader: reader, group: group, subject: subject, minutes: minutes[rand(23)+1])
+  GroupReaderSubject.create(reader: reader, group: group, subject: subject, minutes: minutes[rand(23)+1], priority: Cell::PRIORITY[rand(3)])
 end 
 

@@ -5,6 +5,7 @@ class CreateGroupReaderSubjects < ActiveRecord::Migration
       t.references :reader
       t.references :subject
       t.integer :minutes
+      t.integer :priority
       t.timestamps
     end
     add_index :group_reader_subjects, :group_id
